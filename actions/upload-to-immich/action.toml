@@ -1,0 +1,20 @@
+schema_version = 1
+id = "upload-to-immich"
+name = "Upload to Immich"
+description = "Uploads photos and videos to an Immich server; duplicates are detected by Immich"
+icon = "camera"
+enabled = true
+menu = "top"
+
+[when]
+kinds = ["file"]
+mime_types = ["image/*", "video/*"]
+min_items = 1
+
+[run]
+runtime = "python"
+entrypoint = "run.py"
+mode = "per-item"
+on_error = "continue"
+working_directory = "parent"
+confirm = false

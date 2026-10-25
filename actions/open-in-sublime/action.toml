@@ -1,0 +1,17 @@
+schema_version = 1
+id = "open-in-sublime"
+name = "Open in Sublime Text"
+description = "Opens the selected files in Sublime Text"
+icon = "file-code"
+enabled = true
+menu = "top"
+
+[when]
+kinds = ["file"]
+min_items = 1
+
+[run]
+runtime = "command"
+program = "subl"
+args = ["--", "{paths}"]
+mode = "whole-selection"

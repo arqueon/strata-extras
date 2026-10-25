@@ -1,0 +1,18 @@
+schema_version = 1
+id = "compare-with-meld"
+name = "Compare with Meld"
+description = "Compares the two or three selected files or folders in Meld"
+icon = "diff"
+enabled = true
+menu = "top"
+
+[when]
+kinds = ["file", "folder"]
+min_items = 2
+max_items = 3
+
+[run]
+runtime = "command"
+program = "meld"
+args = ["--", "{paths}"]
+mode = "whole-selection"

@@ -1,0 +1,20 @@
+schema_version = 1
+id = "webp-for-web"
+name = "WebP for the web"
+description = "Writes a WebP copy next to each image: at most 1920 px, quality 85, metadata removed"
+icon = "image"
+enabled = true
+menu = "submenu"
+
+[when]
+kinds = ["file"]
+mime_types = ["image/*"]
+min_items = 1
+
+[run]
+runtime = "python"
+entrypoint = "run.py"
+mode = "per-item"
+on_error = "continue"
+working_directory = "parent"
+confirm = false

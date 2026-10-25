@@ -1,0 +1,18 @@
+schema_version = 1
+id = "copy-to-nextcloud"
+name = "Copy to Nextcloud"
+description = "Copies the selection into a folder that the Nextcloud desktop client keeps in sync"
+icon = "send"
+enabled = true
+menu = "top"
+
+[when]
+kinds = ["file", "folder"]
+min_items = 1
+
+[run]
+runtime = "python"
+entrypoint = "run.py"
+mode = "whole-selection"
+working_directory = "parent"
+confirm = false

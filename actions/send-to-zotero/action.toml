@@ -1,0 +1,20 @@
+schema_version = 1
+id = "send-to-zotero"
+name = "Send to Zotero"
+description = "Adds PDFs and EPUBs to the collection selected in Zotero and lets Zotero retrieve their metadata"
+icon = "library"
+enabled = true
+menu = "top"
+
+[when]
+kinds = ["file"]
+extensions = ["pdf", "epub"]
+min_items = 1
+
+[run]
+runtime = "python"
+entrypoint = "run.py"
+mode = "per-item"
+on_error = "continue"
+working_directory = "parent"
+confirm = false
