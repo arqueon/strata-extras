@@ -47,6 +47,25 @@ Then review them in **Strata → Settings → Actions**. Actions run with your p
   ```
 - **WebP for the web** needs ImageMagick (`magick`). `WEBP_MAX_EDGE` and `WEBP_QUALITY` change the defaults.
 
+## Bookmarks submenu (provider)
+
+[`providers/sftp-bookmarks`](providers/sftp-bookmarks) is a Strata [file provider](https://github.com/lgse/strata/blob/main/docs/file-providers.md) that adds one submenu to the right-click menu with your remote bookmarks (SFTP, SMB, WebDAV…), optionally grouped, instead of pinning each server in the sidebar. Choosing an entry opens it in a new Strata window; GVfs mounts it with your SSH key or asks for credentials.
+
+```sh
+cd providers/sftp-bookmarks
+./install.sh --menu Servers        # the submenu label you want
+```
+
+Then edit `~/.config/strata-extras/sftp-bookmarks.tsv` (created from [the example](providers/sftp-bookmarks/sftp-bookmarks.example.tsv) on first install; keep it private) and choose **Refresh** in **Strata → Settings → Integrations**:
+
+```text
+label<TAB>uri<TAB>optional group
+Home server	sftp://me@homeserver.lan/home/me	Servers
+Laptop	sftp://me@laptop.lan/home/me	Computers
+```
+
+The file is re-read every time the menu opens, so edits apply immediately.
+
 ## Matugen theme
 
 [`themes/matugen/strata-theme.toml`](themes/matugen/strata-theme.toml) is a [matugen](https://github.com/InioX/matugen) template that maps the Material You palette of your wallpaper to Strata's nine interface colors and five code-preview colors. Strata watches its themes folder, so open windows recolor as soon as matugen rewrites the file.

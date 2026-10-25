@@ -1,0 +1,8 @@
+# Copy to ~/.config/strata-extras/sftp-bookmarks.tsv and edit (keep it private: chmod 600).
+# label<TAB>uri<TAB>optional group (a nested submenu)
+Home server	sftp://me@homeserver.lan/home/me	Servers
+Home server · root	sftp://root@homeserver.lan/	Servers
+NAS	sftp://admin@nas.lan/mnt/tank	Servers
+Laptop	sftp://me@laptop.lan/home/me	Computers
+Office desktop	sftp://me@office.example.org/home/me	Computers
+Shared folder	smb://nas.lan/share
